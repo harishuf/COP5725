@@ -1,0 +1,54 @@
+Queries
+=======
+
+Average kms : select avg(u.kilometers_run),m.MODEL_NAME from used_car u, model m
+where u.model_id=m.model_id
+group by m.model_name;
+
+select count(*), kilometers_run, registration_year, 20*round(horsepower/20),
+min(price) as minprice, 
+max(price) as maxPrice, 
+avg(price) as avgPreis, 
+sqrt(variance(price)) as sdPreis from used_car 
+where 
+registration_year > 1990 and registration_year < 2016 
+and price > 100 and price < 100000 
+and 20*round(horsepower/20) < 600 and 20*round(horsepower/20) > 0 
+group by kilometers_run, registration_year, 20*round(horsepower/20)
+having count(*) > 10;
+
+
+popularity by month.
+
+
+select count(*),u.REGISTRATION_YEAR from used_car u, listing l
+where u.registration_number=l.registration_number
+and date_sold is not null
+group by u.registration_year;
+
+sold vs unsold per user.
+
+
+select distinct(extract(month from date_created)) from listing where date_sold is not null;
+
+attributes of those models who have highest selling count.
+
+select count(*),model_name,fuel_type,vehicle_type,gearbox_type from model m, used_car u
+where m.model_id=u.MODEL_ID
+and u.registration_number in
+(select registration_number from listing where status='sold')
+group by model_name,fuel_type,vehicle_type,gearbox_type;
+
+
+Attribute combo:
+
+select model_name, max(qty)as MAX_SOLD_COMBO_NUM from
+(select count(*) as qty,model_name,fuel_type,vehicle_type,gearbox_type
+from model m, used_car u
+where m.model_id=u.MODEL_ID
+and u.registration_number in
+(select registration_number from listing where status='sold')
+group by model_name,fuel_type,vehicle_type,gearbox_type )
+group by model_name
+order by MAX_SOLD_COMBO_NUM desc;
+
