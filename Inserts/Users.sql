@@ -1,0 +1,10 @@
+INSERT INTO MOCK_DATA_1 VALUES ('pgarza0@nymag.com','2zzaroMOx0','Paula','Garza','49-(988)446-5810',22,'334 Maywood Road',04288,'Germany','Sachsen');
+INSERT INTO MOCK_DATA_1 VALUES ('bmarshall1@ocn.ne.jp','DAgyju6C4g','Brenda','Marshall','49-(526)690-3752',295,'2 Dakota Street',39130,'Germany','Sachsen-Anhalt');
+INSERT INTO MOCK_DATA_1 VALUES ('rgreene2@uol.com.br','IDcEOzAGE','Ruth','Greene','49-(651)496-4621',216,'40 Logan Hill',90451,'Germany','Bayern');
+INSERT INTO MOCK_DATA_1 VALUES ('rwest3@g.co','WI9wUzzlUiP','Richard','West','49-(226)944-0561',77565,'676 Tennessee Center',44369,'Germany','Nordrhein-Westfalen');
+INSERT INTO MOCK_DATA_1 VALUES ('smason4@e-recht24.de','tyENJcKbhLk','Sandra','Mason','49-(386)490-7591',1163,'82 Stang Street',81679,'Germany','Bayern');
+INSERT INTO MOCK_DATA_1 VALUES ('hhayes5@techcrunch.com','GxOzA6KNpUK8','Henry','Hayes','49-(358)758-7485',16,'4978 Rowland Crossing',60549,'Germany','Hessen');
+INSERT INTO MOCK_DATA_1 VALUES ('aferguson6@nbcnews.com','feWkVM3Gh','Annie','Ferguson','49-(394)144-9164',9,'891 High Crossing Plaza',40225,'Germany','Nordrhein-Westfalen');
+INSERT INTO MOCK_DATA_1 VALUES ('amoreno7@twitter.com','pZab4jE8','Alice','Moreno','49-(137)687-2688',2,'5 Maple Wood Plaza',45886,'Germany','Nordrhein-Westfalen');
+INSERT INTO MOCK_DATA_1 VALUES ('bporter8@reference.com','8tcWUV9fU','Beverly','Porter','49-(632)374-4015',3,'3027 Kingsford Plaza',79114,'Germany','Baden-Württemberg');
+INSERT INTO MOCK_DATA_1 VALUES ('sjordan9@ucoz.ru','sdtL3GX','Sarah','Jordan','49-(597)440-6100',9,'810 Welch Avenue',28355,'Germany','Bremen');

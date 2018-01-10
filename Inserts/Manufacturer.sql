@@ -1,0 +1,42 @@
+CREATE TABLE Manufacturer (
+    `alfa_romeo` VARCHAR(13) CHARACTER SET utf8,
+    `O0T3BS` VARCHAR(7) CHARACTER SET utf8
+);
+INSERT INTO Manufacturer VALUES ('audi','19SKKD0');
+INSERT INTO Manufacturer VALUES ('bmw','14O1S1Q');
+INSERT INTO Manufacturer VALUES ('chevrolet','2304VK9');
+INSERT INTO Manufacturer VALUES ('chrysler','34AHD53');
+INSERT INTO Manufacturer VALUES ('citroen','3IJBQP6');
+INSERT INTO Manufacturer VALUES ('dacia','2VPADCF');
+INSERT INTO Manufacturer VALUES ('daewoo','314GOUJ');
+INSERT INTO Manufacturer VALUES ('daihatsu','3JLN69A');
+INSERT INTO Manufacturer VALUES ('fiat','1EABU61');
+INSERT INTO Manufacturer VALUES ('ford','1L0PTIB');
+INSERT INTO Manufacturer VALUES ('honda','24RQKQ9');
+INSERT INTO Manufacturer VALUES ('hyundai','S1DKHL');
+INSERT INTO Manufacturer VALUES ('jaguar','DITH5U');
+INSERT INTO Manufacturer VALUES ('jeep','1IANMT0');
+INSERT INTO Manufacturer VALUES ('kia','3D3MNK6');
+INSERT INTO Manufacturer VALUES ('lada','310P2AP');
+INSERT INTO Manufacturer VALUES ('lancia','34L05L5');
+INSERT INTO Manufacturer VALUES ('land_rover','3KKNS85');
+INSERT INTO Manufacturer VALUES ('mazda','2ONTV3V');
+INSERT INTO Manufacturer VALUES ('mercedes_benz','249NU0S');
+INSERT INTO Manufacturer VALUES ('mini','3SRAA69');
+INSERT INTO Manufacturer VALUES ('mitsubishi','10J4IR7');
+INSERT INTO Manufacturer VALUES ('nissan','1A25CP1');
+INSERT INTO Manufacturer VALUES ('opel','3BQKLR0');
+INSERT INTO Manufacturer VALUES ('peugeot','DGJ69G');
+INSERT INTO Manufacturer VALUES ('porsche','2JLU7D2');
+INSERT INTO Manufacturer VALUES ('renault','2RI7NE6');
+INSERT INTO Manufacturer VALUES ('rover','1MB9BGC');
+INSERT INTO Manufacturer VALUES ('saab','2LTHCSK');
+INSERT INTO Manufacturer VALUES ('seat','J3K83J');
+INSERT INTO Manufacturer VALUES ('skoda','3EC9DGD');
+INSERT INTO Manufacturer VALUES ('smart','5VPHA7');
+INSERT INTO Manufacturer VALUES ('subaru','15FNBEC');
+INSERT INTO Manufacturer VALUES ('suzuki','3E0JSKV');
+INSERT INTO Manufacturer VALUES ('toyota','1DJJB5U');
+INSERT INTO Manufacturer VALUES ('trabant','2IBP1H5');
+INSERT INTO Manufacturer VALUES ('volkswagen','DVRI5T');
+INSERT INTO Manufacturer VALUES ('volvo','2P176N');
