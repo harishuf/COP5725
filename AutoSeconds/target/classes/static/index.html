@@ -1,0 +1,531 @@
+<html>
+<head>
+<title>AutoSeconds!</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="/css/custom.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container" id="topNavbarContainer">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-target="#topNavbar"
+					data-toggle="collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+
+			</div>
+
+			<div class="navbar-collapse collapse" id="topNavbar">
+				<ul class="nav navbar-nav navbar-left">
+					<li class="active"><a href="#">AutoSeconds!</a></li>
+					<li><a id="idBtnDataCount" href="#">Data count</a></li>
+				</ul>
+
+				<div class="nav navbar-form navbar-left" role="search">
+					<input id="idSearchText" type="text" class="form-control"
+						placeholder="search"></input>
+					<button id="idBtnSearch" type="submit" class="btn btn-default">Submit</button>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a id="idLoginBtnNavBar" href="#">Login</a></li>
+					<li><a id="idBtnSignUp" href="#">Sign Up!</a></li>
+					<!-- <li><a id="idBtnCompare" href="#">Compare</a></li> -->
+					<li><a id="idBtnInsights" href="#">Insights</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2" id="leftSidebar">
+
+				<div id="idUserOptions" class="container-fluid jumbotron"
+					style="display: none">
+					<div class="row align-items-start">
+						<div id="idUserInfo"></div>
+						<ul>
+							<!-- <li><a id="idUserMessages" href="#">Messages</a></li>
+							<li><a id="idEditProfile" href="#">Edit Profile</a></li>
+							<li><a id="idUserListings" href="#">My Listings</a></li> -->
+							
+							<li><a id="idUserCreateListings" href="#">Create Listings</a></li>
+							<li><a id="idLogout" href="#">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-10" id="mainContentArea">
+				<div id="idSearchResults" class="jumbotron" style="display: none"></div>
+				<div id="compare" style="display: none"></div>
+				<div id="insights" style="display: none"></div>
+				
+				
+				<!-- create listing div -->
+				<div id="createListing" style="display: none">
+
+					<form id="createListingForm">
+						<h1>Create a listing</h1>
+
+						<div class="form-group">
+							<label for="inputCreateListingTitle">Title</label> <input
+								class="form-control" placeholder="New listing title" type="text"
+								id="inputCreateListingTitle" required />
+						</div>
+
+						<h2>Enter car details</h2>
+						<label for="createListingManu">Manufacturer</label>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="createListingManu" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="true">
+								Manufacturer <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" id="createListingManuUl"
+								aria-labelledby="createListingManu">
+							</ul>
+						</div>
+						<label for="createListingModel">Model</label>
+						<div class="dropdown" style="float: left; padding-right: 15px">
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="createListingModel" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="true">
+								Model <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" id="createListingModelUl"
+								aria-labelledby="createListingModel">
+							</ul>
+						</div>
+						<br/>
+						<div class="form-group">
+							<label for="inputCreateListingPrice">Price</label> <input
+								class="form-control" placeholder="Price" type="text"
+								id="inputCreateListingPrice" required />
+						</div>
+						<div class="form-group">
+							<label for="inputCreateListingKm">Kilometers run</label> <input
+								class="form-control" placeholder="Kilometers run"
+								pattern="[0-9]{1,7}" title="Kilometers run should be a number"
+								type="text" id="inputCreateListingKm" required />
+						</div>
+						<div class="form-group">
+							<label for="inputCreateListingCondition">Condition</label> <input
+								class="form-control" placeholder="Condition" type="text"
+								id="inputCreateListingCondition" required />
+						</div>
+						<div class="form-group">
+							<label for="inputCreateListingColor">Color</label> <input
+								class="form-control" placeholder="Color" type="text"
+								id="inputCreateListingColor" required />
+						</div>
+						<div class="form-group">
+							<label for="inputCreateListingRegNo">Registration number</label>
+							<input class="form-control" placeholder="Registration number"
+								type="text" id="inputCreateListingRegNo" required />
+						</div>
+						<div class="form-group">
+							<label for="inputCreateListingHp">HorsePower</label> <input
+								class="form-control" placeholder="HorsePower" type="text"
+								id="inputCreateListingHp" required />
+						</div>
+						<div>
+						<label for="createListingMonthDrop">Registration month</label>
+							<div class="dropdown" style="float: left; padding-right: 15px">
+								<button class="btn btn-default dropdown-toggle" type="button"
+									id="createListingMonthDrop" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="true">
+									Registration Month <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu"
+									aria-labelledby="createListingMonthDrop">
+									<li><a onClick="$(createListingMonthDrop).text('Jan');">Jan</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Feb');">Feb</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Mar');">Mar</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Apr');">Apr</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('May');">May</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Jun');">Jun</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Jul');">Jul</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Aug');">Aug</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Sept');">Sept</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Oct');">Oct</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Nov');">Nov</a></li>
+									<li><a onClick="$(createListingMonthDrop).text('Dec');">Dec</a></li>
+								</ul>
+							</div>
+							<div class="form-group" style="float: left;">
+							<label for="inputCreateListingYear">Registration year</label>
+								<input class="form-control" placeholder="Registration Year"
+									pattern="[0-9]{4,4}" title="Regsitration year is invalid"
+									type="text" id="inputCreateListingYear" required />
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="inputCreateListingAcc">Accident details</label>
+							<input class="form-control" placeholder="Accident details"
+								style="height: 100px;" type="text" id="inputCreateListingAcc" />
+						</div>
+						<div>
+							<button id="idBtnCreateListingCreate" class="btn btn-primary"
+								style="float: right;" type="submit">Create</button>
+							<button id="idBtnCreateListingBack" class="btn btn-primary"
+								style="float: right;">Back</button>
+						</div>
+					</form>
+
+				</div><!-- create listing div -->
+				
+
+				<div id="idViewListingInfo"></div>
+				<div id="idEditUserProfile"></div>
+				<div id="idCreateNewListing"></div>
+				<div id="idEditListing"></div>
+
+
+				<!-- Login Modal Form -->
+				<div class="modal fade" data-backdrop="static" id="idLoginModal"
+					tabIndex=-1>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Login!</h4>
+							</div>
+
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="inputUserName">User name</label> <input
+											class="form-control" placeholder="Login Username" type="text"
+											id="inputUserName" />
+									</div>
+
+									<div class="form-group">
+										<label for="inputPassword">Password</label> <input
+											class="form-control" placeholder="Login Password"
+											type="password" id="inputPassword" />
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button id="idBtnModalLogin" class="btn btn-primary">Login</button>
+								<button id="idBtnModalClose" class="btn btn-primary"
+									data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--  Data Count Modal -->
+				<div class="modal fade" data-backdrop="static" id="idDataCountModal"
+					tabIndex=-1>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Data Count!</h4>
+							</div>
+
+							<div class="modal-body">
+								<h4 class="modal-title" id="idTxtDataCount"></h4>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				<!-- Register Modal Form -->
+				<div class="modal fade" data-backdrop="static" id="idRegisterModal"
+					tabIndex=-1>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Register!</h4>
+							</div>
+
+							<div class="modal-body">
+								<form id="registerForm">
+									<div class="form-group">
+										<label for="inputRegisterUserName">E-mail</label> <input
+											class="form-control" placeholder="E-Mail" type="email"
+											id="inputRegisterUserName"
+											title="Email is incorrect, should be of the form me@example.com"
+											required />
+									</div>
+
+									<div class="form-group">
+										<label for="inputRegisterPassword">Password</label> <input
+											class="form-control" placeholder="New Password"
+											pattern=".{4,}" title="Password must be 4 characters minimum"
+											type="password" id="inpuRegistertPassword" required />
+									</div>
+
+									<div class="form-group">
+										<label for="inputRegisterFName">Name</label> <input
+											class="form-control" placeholder="First Name" type="text"
+											id="inputRegisterFName" required />
+									</div>
+
+									<div class="form-group">
+										<input class="form-control" placeholder="Last Name"
+											type="text" id="inputRegisterLName" required />
+									</div>
+
+									<div class="form-group">
+										<label for="inputRegistertPhone">Phone</label> <input
+											class="form-control" placeholder="Phone"
+											pattern="[0-9]{4,16}"
+											title="Phone number must contain only 0-9 with a max size of 16"
+											type="text" id="inputRegistertPhone" required />
+									</div>
+									<div class="form-group">
+										<label for="inputRegistertAddr1">Address</label> <input
+											class="form-control" placeholder="Address Line 1" type="text"
+											id="inputRegistertAddr1" required />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="Address Line 2"
+											type="text" id="inputRegistertAddr2" required />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="City" type="text"
+											id="inputRegistertCity" required />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="Zipcode"
+											type="number" id="inputRegistertZip" required />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="State" type="text"
+											id="inputRegistertState" required />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="Country" type="text"
+											id="inputRegistertCountry" required />
+									</div>
+
+									<div class="modal-footer">
+										<button id="idBtnModalRegister" class="btn btn-primary"
+											type="submit">Register</button>
+										<button id="idBtnRegisterModalClose" class="btn btn-primary"
+											data-dismiss="modal">Close</button>
+									</div>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div><!-- Register Modal Form -->
+				
+				
+			</div>
+
+			<!-- <div class="col-md-1" id="rightSideBar">
+				<div>Right Side Bar</div>
+			</div> -->
+
+		</div>
+	</div>
+
+
+	<!-- Load the 3rd party JS libraries -->
+	<script src="js/lib/jquery-3.1.1.min.js"></script>
+	<script src="js/lib/jquery.tmpl.js"></script>
+	<script src="js/lib/bootstrap.js"></script>
+	<script src="js/lib/Chart.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+	<!-- Custom JS implementations -->
+	<script src="js/Utils.js"></script>
+	<script src="js/Navigator.js"></script>
+	<script src="js/Login.js"></script>
+	<script src="js/Search.js"></script>
+	<script src="js/ListingView.js"></script>
+	<script src="js/Insights.js"></script>
+	<script src="js/Compare.js"></script>
+	<script src="js/Register.js"></script>
+	<script src="js/CreateListing.js"></script>
+	<script src="js/DataCount.js"></script>
+
+	<!-- jQuery Template Scripts -->
+	<!-- Listing Template -->
+	<script id="listingsTemplate" type="text/x-jQuery-tmpl">
+		<div class="container" style="margin-bottom: 25">
+  			<div class="media" style="margin-left: 10">
+    			<div class="media-left">
+      				<a href="#">
+        				<img class="media-object" src="images/default.png" height="128" width="128">
+     				 </a>
+   				 </div>
+  				<div class="media-body" id=${id}>
+    				<h3 class="media-heading">${title}</h3>
+
+					<h5>DATE CREATED : ${dateCreated}</h5>
+					<h5>OWNER EMAIL  : ${email}</h5>
+					<h5>STATUS 		 : ${status}</h5>
+					<h5>PRICE(€) 	 : ${price}</h5>
+
+					<button type="button" class="btn btn-primary btn-sm pull-right compare rightCompare">Compare(Right)</button>
+					<button type="button" class="btn btn-primary btn-sm pull-right compare leftCompare">Compare(Left)</button>
+					<button type="button" class="btn btn-primary btn-sm pull-right idViewInfo">View Info</button>
+
+  				</div>
+			</div>  
+		</div>
+		 <hr class="my-4">
+    </script>
+
+	<script id="listingsViewTemplate" type="text/x-jQuery-tmpl">
+		<div id="listingsView" class="container-fluid jumbotron"
+						
+			<b>
+				<h2>Owner : ${emailId} <button type="button" class="btn btn-primary pull-right">Contact Seller</button> </h2>
+				<h2>Listing : ${title}</h2>
+			</b>
+			<table id="idListingTable" class="table table-striped">
+   			 	<tbody>
+					<tr>
+       				 	<td>Price</td>
+        			 	<td>${price}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Status</td>
+        			 	<td>${status}</td>
+      				</tr>
+					<tr>
+       				 	<td>Manufacturer</td>
+        			 	<td>${usedCar.model.manufacturer.manufacturerName}</td>
+      				</tr>
+					<tr>
+       				 	<td>Model</td>
+        			 	<td>${usedCar.model.modelName}</td>
+      				</tr>
+					<tr>
+       				 	<td>Date Created</td>
+        			 	<td>${dateCreated}</td>
+      				</tr>
+     			 	<tr>
+       				 	<td>Registration Number</td>
+        			 	<td>${registrationNumber}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Registration Year</td>
+        			 	<td>${usedCar.registrationYear}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Registration Month</td>
+        			 	<td>${usedCar.registrationMonth}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Condition</td>
+        			 	<td>${usedCar.condition}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Number of kilometers run</td>
+        			 	<td>${usedCar.kilometersRun}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Color</td>
+        			 	<td>${usedCar.color}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Accident History</td>
+        			 	<td>${usedCar.accidentHistory}</td>
+     			 	</tr>
+					<tr>
+       				 	<td>Horsepower</td>
+        			 	<td>${usedCar.horsepower}</td>
+      				</tr>
+					<tr>
+       				 	<td>Fuel Type</td>
+        			 	<td>${usedCar.model.fuelType}</td>
+      				</tr>
+					<tr>
+       				 	<td>Vehicle Type</td>
+        			 	<td>${usedCar.model.vehicleType}</td>
+      				</tr>
+					<tr>
+       				 	<td>Gearbox Type</td>
+        			 	<td>${usedCar.model.gearboxType}</td>
+      				</tr>
+    			</tbody>
+ 	  		</table>
+		</div>
+    </script>
+
+	<script id="compareViewTemplate" type="text/x-jQuery-tmpl">
+		<div id="compareView" class="container-fluid jumbotron table-responsive"	
+			<b>
+				<h2>Comparison</h2>
+			</b>
+			<table class="table table-bordered table-hover"> 
+								<thead class="thead-inverse"> 
+									<tr> <th>Parameter</th> <th>Car 1</th> <th>Car 2</th> </tr> 
+								</thead> 
+								<tbody> 
+									<tr> <th scope="row">Manufacturer</th> 
+										<td id ="compareManufacturer1">${left.usedCar.model.manufacturer.manufacturerName}</td> 
+										<td id = "compareManufacturer2">${right.usedCar.model.manufacturer.manufacturerName}</td> 
+									</tr> 
+									<tr> <th scope="row">Model</th> 
+										<td id ="compareModel1">${left.usedCar.model.modelName}</td> 
+										<td id = "compareModel2">${right.usedCar.model.modelName}</td> 
+									</tr> 
+									<tr> <th scope="row">Year</th> 
+										<td id ="compareYear1">${left.usedCar.registrationYear}</td> 
+										<td id = "compareYear2">${right.usedCar.registrationYear}</td> 
+									</tr> 
+									<tr> <th scope="row">Price</th> 
+										<td id ="comparePrice1">${left.price}</td> 
+										<td id = "comparePrice2">${right.price}</td> 
+									</tr> 								
+									<tr> <th scope="row">Condition</th> 
+										<td id ="compareCondition1">${left.usedCar.condition}</td> 
+										<td id = "compareCondition2">${right.usedCar.condition}</td> 
+									</tr> 								
+									<tr> <th scope="row">Kilometers</th> 
+										<td id ="compareKm1">${left.usedCar.kilometersRun}</td> 
+										<td id = "compareKm2">${right.usedCar.kilometersRun}</td> 
+									</tr> 
+									<tr> <th scope="row">Color</th> 
+										<td id ="compareColor1">${left.usedCar.color}</td> 
+										<td id = "compareColor2">${right.usedCar.color}</td> 
+									</tr> 
+									<tr> <th scope="row">Accident History</th> 
+										<td id ="compareHistory1">${left.usedCar.accidentHistory}</td> 
+										<td id = "compareHistory2">${right.usedCar.accidentHistory}</td> 
+									</tr> 
+									<tr> <th scope="row">Horse Power</th> 
+										<td id ="compareHP1">${left.usedCar.horsepower}</td> 
+										<td id = "compareHP2">${right.usedCar.horsepower}</td> 
+									</tr>  
+								</tbody>
+							</table> 
+			
+		</div>
+    </script>
+
+    <script id="leastAveragePriceUsersTmpl" type="text/x-jQuery-tmpl">
+		<tr>
+			<td>${firstName}</td> 
+			<td>${lastName}</td>
+			<td>${emailId}</td> 
+			<td>${maxPrice}</td>
+			<td>${minPrice}</td> 
+			<td>${avgPrice}</td> 
+		</tr> 
+    </script>
+</body>
+</html>
+
+<!-- <tr> <th scope="row">Listing</th> 
+										<td id ="listingName1">${left.title}</td> 
+										<td id = "listingName2">${right.title}</td> 
+</tr>  -->
